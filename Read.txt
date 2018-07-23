@@ -1,0 +1,7 @@
+To install all devdependencies run the command
+npm install
+
+To build bundle.js file execute the command
+npm run build - it will produce the bundled files
+
+npm start - to start server
