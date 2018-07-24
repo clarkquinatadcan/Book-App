@@ -3,6 +3,7 @@ import BookItem from './BookItem';
 
 class BookList extends React.Component {
 
+// const BookList = ({Books}) => {
 
     render() {
         // console.log(this.props);
@@ -10,11 +11,11 @@ class BookList extends React.Component {
         // console.log(Books);
         return(
             <div className="container">
-                <h3 className="text-center">Book List</h3>
+                <h3 className="text-center">Available Books</h3>
                 <div className="row justify-content-left">
                     <div className="col-sm-12 py-3">
                         <ul className="list-group">
-                            {Books.map(book => (
+                            {Books.map((book) => (
                                 // <li key={book.ID} className="list-group-item">
                                 //     <div className="sing-book">
                                 //         <div className="book-title">
@@ -25,7 +26,7 @@ class BookList extends React.Component {
                                 //         </div>
                                 //     </div>
                                 // </li>
-                                <BookItem bookitem={book}/>
+                                 <BookItem bookitem={book} key={book.ID}/>
                             ))}
                         </ul>
                     </div>

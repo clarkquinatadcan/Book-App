@@ -30,7 +30,7 @@ class BookItem extends React.Component {
             return <div>Loading... </div>
         }
         return(
-            <li key={bookItem.ID} className="list-group-item">
+            <li className="list-group-item">
                 <div className="singgle-bookItem">
                     <div className="bookItem-title">
                         <h5>{bookItem.Title}</h5>
