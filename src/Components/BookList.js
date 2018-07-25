@@ -1,38 +1,35 @@
-import React, { Component } from 'react';
-import BookItem from './BookItem';
+import React, { Component } from 'react'
+import BookItem from './BookItem'
+import BookDetails from './BookDetails'
 
-class BookList extends React.Component {
+const BookList = ({Books, handleClick}) => {
 
+        // console.log(Books)
+        // console.log(Load)
+        // console.log(handleClick)
 
-    render() {
-        // console.log(this.props);
-        const Books = this.props.Books;
-        // console.log(Books);
         return(
             <div className="container">
-                <h3 className="text-center">Book List</h3>
+                <h3 className="text-center">Available Books</h3>
+                <button className="btn btn-primary" onClick={(Books) => handleClick(Books)}>Click Book List</button>
+                <hr />
+                <BookDetails ClickData={handleClick}/>
                 <div className="row justify-content-left">
                     <div className="col-sm-12 py-3">
                         <ul className="list-group">
-                            {Books.map(book => (
-                                // <li key={book.ID} className="list-group-item">
-                                //     <div className="sing-book">
-                                //         <div className="book-title">
-                                //             <h5>{book.Title}</h5>
-                                //         </div>
-                                //         <div className="book-img">
-                                //             <img src={book.Image} />
-                                //         </div>
-                                //     </div>
-                                // </li>
-                                <BookItem bookitem={book}/>
-                            ))}
+                            {
+                                Books
+                                    ?  Books.map((book) => (
+                                            <BookItem bookitem={book} key={book.ID}/>
+                                        ))
+                                    : <div>No result found.</div>
+                            }
+                            
                         </ul>
                     </div>
                 </div>
             </div>
-        );
-    }
+        )
 }
 
-export default BookList;
+export default BookList
