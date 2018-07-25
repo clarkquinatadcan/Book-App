@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react'
 
-class SearchBanner extends React.Component {
 
-    render(){
+const SearchBanner = ({passTerm, passonChange}) => {
+
         // console.log(this.props.passonChange);
-        console.log(this.props.passTerm);
+        // console.log(passTerm);
         return(
             <div className="HomeSearch py-5">
                 <div className="container">
@@ -15,8 +15,8 @@ class SearchBanner extends React.Component {
                                 <input 
                                     className="form-control" 
                                     placeholder="Search Books..." 
-                                    value={this.props.passTerm} 
-                                    onChange={this.props.passonChange}
+                                    value={passTerm} 
+                                    onChange={(value) => passonChange(value)}
                                 />
                             </form>
                         </div>
@@ -24,8 +24,7 @@ class SearchBanner extends React.Component {
                     </div>
                 </div>
             </div>
-        );
-    }
+        )
 }
 
-export default SearchBanner;
+export default SearchBanner

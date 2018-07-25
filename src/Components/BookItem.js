@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-
-
-
 class BookItem extends React.Component {
     constructor(props){
         super(props);
@@ -25,12 +22,12 @@ class BookItem extends React.Component {
     render(){
         const bookItem = this.props.bookitem;
         const { loading } = this.state;
-        // console.log(bookItem);
+        // console.log(bookItem.ID);
         if (!loading) {
             return <div>Loading... </div>
         }
         return(
-            <li className="list-group-item">
+            <li className="list-group-item" onClick={(bookItem) => this.props.handleClickBook(bookItem) }>
                 <div className="singgle-bookItem">
                     <div className="bookItem-title">
                         <h5>{bookItem.Title}</h5>
