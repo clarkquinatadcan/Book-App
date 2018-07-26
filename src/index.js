@@ -1,5 +1,6 @@
 import React, { Compnent }from 'react'
 import ReactDOM from 'react-dom'
+import '../public/css/index.css'
 import Header from './Components/Header'
 import SearchBanner from './Components/SearchBanner'
 import BookList from './Components/BookList'
@@ -13,36 +14,23 @@ class Root extends React.Component {
 			this.state = {
 				loading: false,
 				books: [],
-				type: 'React',
-				boky: 'test'
+				type: 'Scala',
 			};
-			this.apitypeHandler = this.apitypeHandler.bind(this)
-			this.handleClick = this.handleClick.bind(this)
-			this.handleClickBook = this.handleClick.bind(this)			
+			this.apitypeHandler = this.apitypeHandler.bind(this)	
 	}
 
-	handleClick(e){
-		alert("Show Console")
-		// console.log(e)
-		this.setState({
-			boky: e.target.value
-		})
-	}
-	handleClickBook(book){
-		alert(book.Title)
-	}
 
 
 	apitypeHandler(e){
-		// console.log(e)
 		this.setState({
-			type: e.target.value
+			type: e
 		});
-		this.getData()
+		console.log(e)
+		this.getData(e)
 	}
 
-	getData(){
-		const API_URL = "http://it-ebooks-api.info/v1/search/" + this.state.type
+	getData(e){
+		const API_URL = "http://it-ebooks-api.info/v1/search/" + e
 		console.log(API_URL)
 		fetch(API_URL)
 			.then(res => res.json())
@@ -55,7 +43,7 @@ class Root extends React.Component {
 	}
 	
 	componentDidMount(){
-		this.getData()	
+		this.getData(this.state.type)
 	}
 	
 
@@ -71,10 +59,9 @@ class Root extends React.Component {
 				<Header />
 				<SearchBanner 
 					passTerm={this.state.type} 
-					passonChange={(value) => this.apitypeHandler(value)}
+					passonChange={this.apitypeHandler}
 				/>
 				<BookList 
-					handleClick={(Books) =>this.handleClick(Books)} 
 					Load={loading} 
 					Books={books}
 				/>

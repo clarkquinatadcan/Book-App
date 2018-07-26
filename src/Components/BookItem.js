@@ -27,7 +27,7 @@ class BookItem extends React.Component {
             return <div>Loading... </div>
         }
         return(
-            <li className="list-group-item" onClick={(bookItem) => this.props.handleClickBook(bookItem) }>
+            <li className="list-group-item">
                 <div className="singgle-bookItem">
                     <div className="bookItem-title">
                         <h5>{bookItem.Title}</h5>
