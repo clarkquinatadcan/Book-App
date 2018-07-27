@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-class Header extends React.Component {
+// class Header extends React.Component {
+    const Header = () => {
 
-    render(){
+    // render(){
+        // console.log(this.props.homelinkhead)
         return(
             <nav className="navbar navbar-expand-lg navbar-light bg-light position-absolute fixed-top sticky-top">
-                <a className="navbar-brand text-white" href="/" >BookApp</a>
+                <a className="navbar-brand text-white" href="/" >BookApp </a> 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -24,7 +26,7 @@ class Header extends React.Component {
                 </div> */}
             </nav>
         );
-    }
+    // }
 }
 
 export default Header;

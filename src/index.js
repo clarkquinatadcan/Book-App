@@ -20,15 +20,6 @@ class Root extends React.Component {
 	}
 
 
-
-	apitypeHandler(e){
-		this.setState({
-			type: e
-		});
-		console.log(e)
-		this.getData(e)
-	}
-
 	getData(e){
 		const API_URL = "http://it-ebooks-api.info/v1/search/" + e
 		console.log(API_URL)
@@ -40,6 +31,14 @@ class Root extends React.Component {
 					books: json.Books,
 				})
 			})
+	}
+
+	apitypeHandler(e){
+		this.setState({
+			type: e
+		});
+		console.log(e)
+		this.getData(e)
 	}
 	
 	componentDidMount(){
