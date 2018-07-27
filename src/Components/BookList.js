@@ -9,14 +9,13 @@ const BookList = ({Books, handleClick}) => {
         // console.log(handleClick)
 
         return(
-            <div className="container">
+            <div className="container py-5">
                 <h3 className="text-center">Available Books</h3>
-                <button className="btn btn-primary" onClick={(Books) => handleClick(Books)}>Click Book List</button>
-                <hr />
-                <BookDetails ClickData={handleClick}/>
+                {/* <hr /> */}
+                {/* <BookDetails /> */}
                 <div className="row justify-content-left">
                     <div className="col-sm-12 py-3">
-                        <ul className="list-group">
+                        <ul className="list-group flex-row flex-wrap justify-content-center">
                             {
                                 Books
                                     ?  Books.map((book) => (

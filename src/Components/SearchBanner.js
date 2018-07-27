@@ -6,9 +6,10 @@ const SearchBanner = ({passTerm, passonChange}) => {
         // console.log(this.props.passonChange);
         // console.log(passTerm);
         return(
-            <div className="HomeSearch py-5">
+            <div className="HomeSearch">
                 <div className="container">
-                    <h1 className="text-center">Lorem Ipsum</h1>
+                    <h1 className="text-center text-white">Lorem Ipsum</h1>
+                    <p className="text-center text-white">You chance to study free tutorial pdf</p>
                     <div className="row justify-content-center">
                         <div className="col-sm-12 col-md-6">
                             <form>
@@ -16,7 +17,7 @@ const SearchBanner = ({passTerm, passonChange}) => {
                                     className="form-control" 
                                     placeholder="Search Books..." 
                                     value={passTerm} 
-                                    onChange={(value) => passonChange(value)}
+                                    onChange={(e) => passonChange(e.target.value)}
                                 />
                             </form>
                         </div>

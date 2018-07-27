@@ -1,7 +1,7 @@
 import React from 'react'
 
-const BookDetails = ({ClickData}) => {
-    console.log(ClickData.boky)
+const BookDetails = () => {
+
     return(
         <div>
             <h1>Book Details </h1>
