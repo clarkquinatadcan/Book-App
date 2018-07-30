@@ -7,27 +7,25 @@ class BookItem extends React.Component {
             loading : false
         };
     }
+
     
 
-    componentDidMount(){
-        // const bookItem = this.props.bookitem;
-        // (bookItem => (
-        //     this.setState({loading: true})
-        // ))
-        this.setState({loading: true})
 
-    }
-   
+    // ClickMe = (bookItem) => {
+    //     alert('test')
+    //     console.log(bookItem)
+    // }
 
     render(){
         const bookItem = this.props.bookitem;
         const { loading } = this.state;
-        // console.log(bookItem.ID);
-        if (!loading) {
-            return <div>Loading... </div>
-        }
+        // console.log(this.props.handleClick)
+        // console.log(bookItem);
+        // if (!loading) {
+        //     return <div>Loading... </div>
+        // }
         return(
-            <li className="list-group-item">
+            <li className="list-group-item" onClick={() => this.props.handleClick(bookItem)} >
                 <div className="singgle-bookItem">
                     <div className="bookItem-title">
                         <h5>{bookItem.Title}</h5>

@@ -19,7 +19,7 @@ const BookList = ({Books, handleClick}) => {
                             {
                                 Books
                                     ?  Books.map((book) => (
-                                            <BookItem bookitem={book} key={book.ID}/>
+                                            <BookItem bookitem={book} key={book.ID} handleClick={handleClick}/>
                                         ))
                                     : <div>No result found.</div>
                             }

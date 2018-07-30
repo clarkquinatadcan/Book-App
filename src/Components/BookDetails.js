@@ -1,11 +1,11 @@
 import React from 'react'
 
-const BookDetails = ({passGreeting}) => {
-    // console.log(passGreeting)
+const BookDetails = ({test}) => {
+    console.log(test.Title)
     return(
-        <div>
-            {/* <p>{passGreeting}</p> */}
+        <div className="container">
             <h1>Book Details </h1>
+            <p>{test.Title}</p>
         </div>
     );
 }

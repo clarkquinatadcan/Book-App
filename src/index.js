@@ -4,6 +4,7 @@ import '../public/css/index.css'
 import Header from './Components/Header'
 import SearchBanner from './Components/SearchBanner'
 import BookList from './Components/BookList'
+import BookDetails from './Components/BookDetails'
 
 
 
@@ -11,18 +12,25 @@ import BookList from './Components/BookList'
 class Root extends React.Component {
 	constructor(props){
 		super();
-			this.state = {
-				loading: false,
-				books: [],
-				type: 'Scala',
-			};
-			this.apitypeHandler = this.apitypeHandler.bind(this)	
+		this.state = {
+			loading: false,
+			books: [],
+			type: 'Scala',
+			bookItem: '',
+		};
+		// this.apitypeHandler = this.apitypeHandler.bind(this)	
 	}
 
 
-	getData(e){
+	apitypeHandler = (e) => {
+		this.setState({
+			type: e
+		});
+		this.getData(e)
+	}
+	
+	getData = (e) => {
 		const API_URL = "http://it-ebooks-api.info/v1/search/" + e
-		console.log(API_URL)
 		fetch(API_URL)
 			.then(res => res.json())
 			.then(json => {
@@ -33,18 +41,17 @@ class Root extends React.Component {
 			})
 	}
 
-	apitypeHandler(e){
-		this.setState({
-			type: e
-		});
-		console.log(e)
-		this.getData(e)
-	}
-	
-	componentDidMount(){
+	componentDidMount = () => {
 		this.getData(this.state.type)
 	}
 	
+	handleClickItem = (bookItem) => {
+		// console.log(bookItem.Title)
+		this.setState({
+			bookItem: bookItem
+		})
+	}
+
 
 	render(){
 		const { loading, books } = this.state
@@ -63,7 +70,9 @@ class Root extends React.Component {
 				<BookList 
 					Load={loading} 
 					Books={books}
+					handleClick={this.handleClickItem}
 				/>
+				<BookDetails test={this.state.bookItem}/>
 			</div>
 
 		);

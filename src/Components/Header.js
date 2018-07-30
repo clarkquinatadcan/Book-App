@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // class Header extends React.Component {
-    const Header = () => {
+const Header = () => {
 
     // render(){
         // console.log(this.props.homelinkhead)
