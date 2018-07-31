@@ -1,11 +1,12 @@
 import React from 'react'
 
-const BookDetails = ({test}) => {
-    console.log(test.Title)
+const BookDetails = ({bookItemDetails}) => {
+    console.log(bookItemDetails.Title)
     return(
         <div className="container">
             <h1>Book Details </h1>
-            <p>{test.Title}</p>
+            <p>{bookItemDetails.Title}</p>
+            <img src={bookItemDetails.Image} />
         </div>
     );
 }

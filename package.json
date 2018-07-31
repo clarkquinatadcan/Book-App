@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --inline  --open --hot",
+    "start": "webpack-dev-server --mode development --inline   --hot",
     "build": "webpack --mode production"
   },
   "author": "",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1"
   }
 }

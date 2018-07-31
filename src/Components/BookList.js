@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import BookItem from './BookItem'
-import BookDetails from './BookDetails'
 
 const BookList = ({Books, handleClick}) => {
 
@@ -19,7 +18,11 @@ const BookList = ({Books, handleClick}) => {
                             {
                                 Books
                                     ?  Books.map((book) => (
-                                            <BookItem bookitem={book} key={book.ID} handleClick={handleClick}/>
+                                            <BookItem 
+                                                bookitem={book} 
+                                                key={book.ID} 
+                                                handleClick={handleClick}
+                                            />
                                         ))
                                     : <div>No result found.</div>
                             }
