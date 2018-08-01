@@ -1,44 +1,24 @@
 import React, { Component } from 'react';
+import BookDetails from './BookDetails';
+import { Link } from 'react-router-dom';
 
-class BookItem extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            loading : false
-        };
-    }
-    
+const BookItem = ({bookitem, handleClick}) => {
 
-    componentDidMount(){
-        // const bookItem = this.props.bookitem;
-        // (bookItem => (
-        //     this.setState({loading: true})
-        // ))
-        this.setState({loading: true})
-
-    }
-   
-
-    render(){
-        const bookItem = this.props.bookitem;
-        const { loading } = this.state;
-        // console.log(bookItem.ID);
-        if (!loading) {
-            return <div>Loading... </div>
-        }
         return(
-            <li className="list-group-item">
-                <div className="singgle-bookItem">
-                    <div className="bookItem-title">
-                        <h5>{bookItem.Title}</h5>
+            
+            <li className="list-group-item" onClick={() => handleClick(bookitem)} >
+                <Link to='/details'>
+                    <div className="singgle-bookitem">
+                        <div className="bookitem-title">
+                            <h5>{bookitem.Title}</h5>
+                        </div>
+                        <div className="bookitem-img">
+                            <img src={bookitem.Image} />
+                        </div>
                     </div>
-                    <div className="bookItem-img">
-                        <img src={bookItem.Image} />
-                    </div>
-                </div>
+                </Link>
             </li>
         );
-    }
 }
 
 export default BookItem;
